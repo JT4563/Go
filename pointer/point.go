@@ -1,0 +1,48 @@
+package main
+
+import "fmt"
+
+// func main() {
+// 	var num1 int = 10
+// 	var num2 int = 20
+// 	fmt.Println("before swap", num1, num2)
+// 	swap(&num1, &num2)
+// 	fmt.Println("after swap", num1, num2)
+// }
+// func swap(num1 *int, num2 *int) { //using pointer
+// 	temp := *num1
+// 	*num1 = *num2
+// 	*num2 = temp
+            
+// }
+// func main(){
+// 	num1 := 10
+// 	num2 := 20
+// 	fmt.Println("before swap", num1, num2)
+// 	swap(&num1, &num2)
+// 	fmt.Println("after swap", num1, num2)
+// 	fmt.Println()
+// }
+// func swap(num1 *int, num2 *int) {
+// 	temp := *num1
+// 	*num1 = *num2
+// 	*num2 = temp
+// }
+
+
+// updating pattern in the system 
+type User struct{
+	Name string
+	Email string
+}
+
+func updateuser(user *User){
+	user.Name = "abcd"
+	user.Email = "updated@example.com"
+	
+}
+func main(){
+	u := User{Name: "Original", Email: "old@example.com"}
+	updateuser(&u)
+	fmt.Println(u)
+}
