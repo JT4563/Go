@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-func chagnenum(num *int){
-	*num = 1
-	fmt.Println("memory ofnum in changenum", &num)
-}
-func main(){
+// func chagnenum(num *int){
+// 	*num = 1
+// 	fmt.Println("memory ofnum in changenum", &num)
+// }
+// func main(){
 
-	num := 10
-	fmt.Println("memory of num in main", &num)
-	chagnenum(&num)
-	fmt.Println("num in main", num)
-	fmt.Println("memory of num in main", &num)
-}
+// 	num := 10
+// 	fmt.Println("memory of num in main", &num)
+// 	chagnenum(&num)
+// 	fmt.Println("num in main", num)
+// 	fmt.Println("memory of num in main", &num)
+// }
 
 // func main() {
 // 	var num1 int = 10
@@ -49,9 +49,9 @@ func main(){
 // 	Email string
 // }
 
-// func updateuser(user *User){
-// 	user.Name = "abcd"
-// 	user.Email = "updated@example.com"
+// func updateuser(u *User){
+// 	u.Name = "abcd"
+// 	u.Email = "updated@example.com"
 	
 // }
 // func main(){
@@ -59,3 +59,18 @@ func main(){
 // 	updateuser(&u)
 // 	fmt.Println(u)
 // }
+
+type egg struct {
+	customer string;
+    amount int;
+}
+func customerch(bablu *egg){
+	bablu.amount = 23;
+	bablu.customer = "alex"
+	fmt.Println("this is bablu shop",*bablu)
+}
+func main(){
+  santu :=egg{customer : "BELA" , amount: 3}
+  customerch(&santu)
+  fmt.Println("now the customer are switched",santu)
+}
