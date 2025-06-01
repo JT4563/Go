@@ -2,6 +2,19 @@ package main
 
 import "fmt"
 
+func chagnenum(num *int){
+	*num = 1
+	fmt.Println("memory ofnum in changenum", &num)
+}
+func main(){
+
+	num := 10
+	fmt.Println("memory of num in main", &num)
+	chagnenum(&num)
+	fmt.Println("num in main", num)
+	fmt.Println("memory of num in main", &num)
+}
+
 // func main() {
 // 	var num1 int = 10
 // 	var num2 int = 20
@@ -31,18 +44,18 @@ import "fmt"
 
 
 // updating pattern in the system 
-type User struct{
-	Name string
-	Email string
-}
+// type User struct{
+// 	Name string
+// 	Email string
+// }
 
-func updateuser(user *User){
-	user.Name = "abcd"
-	user.Email = "updated@example.com"
+// func updateuser(user *User){
+// 	user.Name = "abcd"
+// 	user.Email = "updated@example.com"
 	
-}
-func main(){
-	u := User{Name: "Original", Email: "old@example.com"}
-	updateuser(&u)
-	fmt.Println(u)
-}
+// }
+// func main(){
+// 	u := User{Name: "Original", Email: "old@example.com"}
+// 	updateuser(&u)
+// 	fmt.Println(u)
+// }
