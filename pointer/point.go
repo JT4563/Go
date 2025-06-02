@@ -61,8 +61,8 @@ import "fmt"
 // }
 
 type egg struct {
-	customer string;
-    amount int;
+	customer string
+    amount int
 }
 func customerch(bablu *egg){
 	bablu.amount = 23;
