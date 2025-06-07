@@ -1,17 +1,21 @@
+package main
+
 import "fmt"
 
-type robot struct {
-	battery int
+type payproces interface {
+	payment() string
 }
 
-func (r robot) talk() string {
-	if r.battery > 0 {
-		return "beep boop"
-	}
-	return "died omg"
+type paytm struct{}
+
+func makepayment(p payproces) {
+	fmt.Println(p.payment())
 }
 
+func (p paytm) payment() string {
+	return "payment is successful"
+}
 func main() {
-	r := robot{battery: 5}
-	fmt.Println(r.talk())
+	pay := paytm{}
+	makepayment(pay)
 }
