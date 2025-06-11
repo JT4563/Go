@@ -38,7 +38,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/hello", helloHandler)
 
-	// ⛓️ Chain CORS middleware
+	
 	handlerWithCORS := corsMiddleware(mux)
 
 	fmt.Println("🚀 Server running on http://localhost:8000")
